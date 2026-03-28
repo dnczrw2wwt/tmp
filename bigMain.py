@@ -3,8 +3,6 @@ import time
 import numpy as np
 import random
 
-random.seed(3)
-
 def checkrepeat(ckb, pos):
     if pos == 7 and ckb[0][0] == ' ':
         return True
