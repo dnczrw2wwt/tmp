@@ -9,3 +9,5 @@ This project is a fork of TicTacToe by m1heat. Hope the pull request goes throug
 Warning: As of now, this code has ***not been tested***, meaning: anything can happen if you run it. 
 
 main.spec is *maybe* for 1player.py. It might not work. It may be removed in the future. 
+
+2026-04-02: Deleted generated files and added the license
