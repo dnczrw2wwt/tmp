@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['main.py'],
+    ['2player.py'],
     pathex=[],
     binaries=[],
     datas=[],
