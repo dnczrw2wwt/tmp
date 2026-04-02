@@ -61,8 +61,8 @@ class UltimateTicTacToe:
                 return
             sg = self._subgrid(bi, bj)
             empties = np.argwhere(sg == 0)
-            for (ci, cj) in empties:
-                moves.append((bi, bj, int(ci), int(cj)))
+            for ci, cj in empties:   # ci, cj are already integers
+                moves.append((bi, bj, ci, cj))
 
         if self.game_over:
             return moves
@@ -90,8 +90,9 @@ class UltimateTicTacToe:
         meta_for_win = np.where(meta_for_win == 2, 0, meta_for_win)
 
         # Compute winner on the meta grid by treating draws as 0
-        if winner_of_board(meta_for_win) in (1, -1):
-            self.meta_winner = winner_of_board(meta_for_win)
+        winner = winner_of_board(meta_for_win)
+        if winner in (1, -1):
+            self.meta_winner = winner
             self.game_over = True
             return
 
@@ -162,11 +163,11 @@ class UltimateTicTacToe:
                 line_cells = []
                 for big_c in range(3):
                     sg = self._subgrid(big_r, big_c)
-                    three = ''.join(self._to_symbol(int(v)) for v in sg[cell_r])
+                    three = ''.join(self._to_symbol(v) for v in sg[cell_r])
                     line_cells.append(three)
                 rows.append(' || '.join(line_cells))
             if big_r < 2:
-                rows.append('=====================')
+                rows.append('=================')  # 17 '=' matches row width
         rows.append(self.meta_status_string())
         return '\n'.join(rows)
 
@@ -265,6 +266,7 @@ def main():
         print("🎉 O wins!")
     else:
         print("🤝 Draw!")
+
 
 if __name__ == "__main__":
     main()
