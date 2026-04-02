@@ -3,3 +3,7 @@ This project is a fork of TicTacToe by m1heat. Hope the pull request goes throug
 2026-04-02: Deleted test files
 
 2026-04-02: Deleted duplicates and updated superTicTacToe.py
+
+2026-04-02: Added GUI for super version with AI and without
+
+Warning: As of now, this code has ***not been tested***, meaning: anything can happen if you run it. 
